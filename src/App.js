@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CategoryItem from './Components/Composites/CategoryItem/index';
+import Card from './Components/Composites/Card';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
           <CategoryItem/>
           <CategoryItem/>
           <CategoryItem/>
+          <Card/>
         </div>
       </div>
     );
