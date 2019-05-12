@@ -1,5 +1,7 @@
 import React from 'react'
+import style from './style'
 import {css} from 'glamor'
+
 export default function categoryItem(props) {
     let img = true;
     let circle = css({
