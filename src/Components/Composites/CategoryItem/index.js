@@ -22,8 +22,10 @@ export default function categoryItem(props) {
         flexDirection: 'column',
     });
     let wrap = css({
+        flex: '0 0 auto',
         maxWidth: '15%',
         margin: props.margin? props.margin : '0px 10px',
+        padding: '0 12px',
     });
   return (
     <>
