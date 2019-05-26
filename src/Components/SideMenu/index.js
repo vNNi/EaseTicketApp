@@ -19,7 +19,7 @@ export default function sidemenu(props) {
         color: 'white',
     });
     let sidemenu = css({
-        width: '30%',
+        width: '320px',
         height: '100vh',
         backgroundColor: Colors.bgBlue,
         transition: 'all 0.5s ease 0s',
