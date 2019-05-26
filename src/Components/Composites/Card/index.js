@@ -12,6 +12,8 @@ let content = css({
     maxHeight: '90px;',
     background: "#FAFAFA",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
+    flex: '0 0 auto',
+    margin: '0 15px',
 });
 let title = css({
     fontSize: '10px',
