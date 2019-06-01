@@ -6,6 +6,8 @@ import Banner from './Components/Banner';
 import Logo from './Components/Composites/Logo';
 import Category from './Components/Category';
 import Recomendations from './Components/Recomendations';
+
+import Scanner from './Components/Scanner';
 class App extends Component {
   render() {
     return (
@@ -49,6 +51,7 @@ class App extends Component {
           <Card/>
           <Card/>
         </Recomendations>
+        <Scanner/>
         </div>
     );
   }
