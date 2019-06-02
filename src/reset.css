@@ -285,7 +285,10 @@ input[type="search"] {
     -webkit-box-sizing: content-box; /* 2 */
     box-sizing: content-box;
 }
-
+a {
+    color: white;
+    text-decoration: none; /* no underline */
+}
 /**
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
