@@ -4,14 +4,13 @@ import Colors from '../../Colors';
 import menuIcon from '../../Assets/Icons/menu.svg';
 import closeIcon from '../../Assets/Icons/close.svg';
 
-export default function sidemenu(props) {
-    const[clicked,setClicked]=useState(false);
+export default function Sidemenu(props) {
+    const [clicked, setClicked] = useState(false);
     let iconwrapper = css({
         display: 'flex',
         justifyContent: props.right?'':'flex-end',
         cursor: 'pointer',
     });
-    console.log(props);
     let menuWrapper = css({
         display: 'flex',
         justifyContent: props.right?'':'flex-end',
