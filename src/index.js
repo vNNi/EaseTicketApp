@@ -11,7 +11,11 @@ import * as serviceWorker from './serviceWorker';
 import Router from './Router';
 
 const httplink = createHttpLink({
-    uri:'http://localhost:3333',
+    uri:'http://localhost:3333/graphql',
+    onError: ({ networkError, graphQLErrors }) => {
+        console.log('graphQLErrors', graphQLErrors)
+        console.log('networkError', networkError)
+    }
 });
 
 const client = new ApolloClient({
