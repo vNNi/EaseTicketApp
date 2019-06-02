@@ -1,15 +1,18 @@
 import React, {useState} from 'react'
 import { css } from 'glamor';
+import {Link} from 'react-router-dom';
+
 import Colors from '../../Colors';
 import menuIcon from '../../Assets/Icons/menu.svg';
 import closeIcon from '../../Assets/Icons/close.svg';
+import Logo from '../../Components/Composites/Logo';
 
 export default function Sidemenu(props) {
     const [clicked, setClicked] = useState(false);
     let iconwrapper = css({
         display: 'flex',
-        justifyContent: props.right?'':'flex-end',
-        cursor: 'pointer',
+        justifyContent: props.right?'':'space-between',
+        padding: '10px',
     });
     let menuWrapper = css({
         display: 'flex',
@@ -64,25 +67,20 @@ export default function Sidemenu(props) {
                         </div>
                         <ul {...linksContent}>
                             <li {...link}>
-                                <a>VAI VAI</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li {...link}>
-                                <a>COMPRAR</a>
+                                <Link to="/scan">Scan</Link>
                             </li>
                             <li {...link}>
-                                <a>TESTE</a>
-                            </li>
-                            <li {...link}>
-                                <a>HOME</a>
-                            </li>
-                            <li {...link}>
-                                <a>TESSSTE</a>
+                                <Link>Comprar Ticket</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <div {...iconwrapper} >
+                <Logo/>
                 <img onClick={handleIconClick} src={menuIcon} width="32px" height="32px"/>
             </div>
         </React.Fragment>

@@ -4,21 +4,22 @@ import Banner from '../../Components/Banner';
 import SideMenu from '../../Components/SideMenu';
 import Category from '../../Components/Category';
 import Recomendations from '../../Components/Recomendations';
-import Logo from '../../Components/Composites/Logo';
 import CategoryItem from '../../Components/Composites/CategoryItem';
 import Card from '../../Components/Composites/Card';
-import Scanner from '../../Components/Scanner';
+
+import {css} from 'glamor';
 
 export default function index() {
+    let menuWrap = css({
+        display: 'flex',
+        justifyContent: 'space-between',
+    });
     return (
         <div className="App">
-            {/* <CategoryItem/>
-                <CategoryItem/>
-                <CategoryItem/>
-                <Card/> */}
             <Banner>
-                <SideMenu />
-                <Logo />
+                <div>
+                    <SideMenu />
+                </div>
             </Banner>
             <Category>
                 <CategoryItem />
@@ -51,7 +52,6 @@ export default function index() {
                 <Card />
                 <Card />
             </Recomendations>
-            <Scanner />
         </div>
     )
 }
