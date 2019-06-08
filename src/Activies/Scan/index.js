@@ -1,12 +1,11 @@
 import React from 'react';
 import { css } from 'glamor';
-import { Mutation } from 'react-apollo';
+import {Redirect} from 'react-router-dom';
 
 import SideMenu from '../../Components/SideMenu';
 import Scanner from '../../Components/Scanner';
 import Colors from '../../Colors';
-import { VERIFY_TOKEN } from '../../Services/GraphQl/mutations';
-
+import ErrorNotify from '../../Components/Composites/ErrorNotify';
 export default function index(props) {
     const title = css({
         fontFamily: 'Montserrat, sans-serif',
@@ -29,26 +28,13 @@ export default function index(props) {
                 <h1 {...title}>Scanner!</h1>
             </div>
             <section {...scanWrapper}>
-                <Mutation mutation={VERIFY_TOKEN}>
-                    {(verifyToken, { data, loading, error }) => {
-                        return (<Scanner
-                            onScan={(token) => {
-                                console.log(token)
-                                if (token) {
-                                    console.log(token);
-                                    if (error) {
-                                        console.log('error',error);
-                                        return props.location.push('/buy', { reject: true });
-                                    }
-                                    verifyToken({ variables: { token: token } });
-                                    if(data){
-                                        console.log('data',data);
-                                    }
-                                }
-                            }}
-                        />)
-                    }}
-                </Mutation>
+              <Scanner
+                onScan={(data)=>{return (<Redirect to={{
+                    pathname: '/success',
+                    state: {data:data},
+                }}/>)}}
+                onError={(err)=>{return (<ErrorNotify text={'Não estamos conseguindo efetuar o pagamento... Desculpe pelo transtorno'}/>)}}
+              />
             </section>
         </>
     );
