@@ -3,13 +3,13 @@ import {css} from 'glamor'
 import Colors from '../../../Colors';
 import StarRatingComponent from 'react-star-rating-component';
 
-export default function cards(props) {
+export default function Cards(props) {
 
 let content = css({
     display: 'flex',
     width: '198px',
     backgroundColor: 'pink',
-    maxHeight: '90px;',
+    maxHeight: '90px',
     background: "#FAFAFA",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
     flex: '0 0 auto',
@@ -30,20 +30,23 @@ let subtitle = css({
     color: Colors.greyLight,
 });
 let wrapInfos = css({
-    margin: '0px 10px',
+    margin: '20px 10px',
 });
 const startclick = () => {
-    console.log('121212');
 }
   return (
       <>
         <div {...content}>
-            <img src="https://picsum.photos/65/90"/>
+            <img src={props.img?props.img:"https://picsum.photos/64/90"} alt={props.title}/>
             <div {...wrapInfos}>
-                <p {...title}>The Avengers</p>
-                <p {...subtitle}>O filme do ano com 20% OFF. Não perca!</p>
+                <p {...title}>{props.name}</p>
+                <p {...subtitle}>{props.description}</p>
                 <StarRatingComponent
-                onStarClick={startclick.bind(this)}/>
+                onStarClick={startclick.bind(this)}
+                value={props.rating}
+                editing={false}
+                name="counting"
+                />
             </div>
         </div>
       </>

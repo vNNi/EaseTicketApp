@@ -3,6 +3,8 @@ const Colors = {
     greyLight: '#8B8B8B',
     bgBlue: '#2c3e50',
     danger: '#e74c3c',
+    yellow: '#FFD800',
+    grey: '#D3D3D3',
 }
 
 export default Colors

@@ -23,7 +23,7 @@ export default function Sidemenu(props) {
     let sidemenu = css({
         width: '320px',
         height: '100vh',
-        backgroundColor: Colors.bgBlue,
+        backgroundColor: Colors.yellow,
         transition: 'all 0.5s ease 0s',
         transform: clicked?'translate3d(0,0,0)':'translate3d(100%,0,0)', 
         position : 'fixed',
@@ -47,8 +47,9 @@ export default function Sidemenu(props) {
     });
     let link = css({
         cursor: 'pointer',
+        fontWeight: '600',
         padding: '14px',
-        fontFamily: 'Roboto, san-serif',
+        fontFamily: 'Montserrat, san-serif',
         ':hover':{
             color: '#3498db',
         }
@@ -63,7 +64,7 @@ export default function Sidemenu(props) {
                 {clicked?(<div {...overlay} onClick={handleIconClick}></div>):null}
                     <div {...sidemenu}>
                         <div {...closebtn} onClick={handleIconClick}>
-                            <img src={closeIcon} width="26px" height="26px"/>
+                            <img src={closeIcon} width="26px" height="26px" alt="close icon"/>
                         </div>
                         <ul {...linksContent}>
                             <li {...link}>
@@ -73,15 +74,17 @@ export default function Sidemenu(props) {
                                 <Link to="/scan">Scan</Link>
                             </li>
                             <li {...link}>
-                                <Link>Comprar Ticket</Link>
+                                <Link to="/">Comprar Ticket</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <div {...iconwrapper} >
-                <Logo/>
-                <img onClick={handleIconClick} src={menuIcon} width="32px" height="32px"/>
+                <Link to="/">
+                    <Logo textShadow={true}/>
+                </Link>
+                <img onClick={handleIconClick} src={menuIcon} width="32px" height="32px" alt="ease ticket logo"/>
             </div>
         </React.Fragment>
     )

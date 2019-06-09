@@ -1,18 +1,16 @@
 import React from 'react'
-import style from './style'
-import {css} from 'glamor'
+import {css} from 'glamor';
 
 export default function categoryItem(props) {
-    let img = true;
     let circle = css({
-        width: "100px",
-        height: "100px",
+        width: "80px",
+        height: "80px",
         backgroundColor:'grey',
         borderRadius: '50%',
     });
     let imgCss = css({
-        width: "100px",
-        height: "100px",
+        width: "80px",
+        height: "80px",
         borderRadius: '50%',
         backgroundRepeat: 'no-repeat',
     });
@@ -23,23 +21,26 @@ export default function categoryItem(props) {
     });
     let wrap = css({
         flex: '0 0 auto',
-        maxWidth: '15%',
-        margin: props.margin? props.margin : '0px 10px',
-        padding: '0 12px',
+        margin: props.margin? props.margin : '0px 15px',
+    });
+    let title = css({
+        fontFamily: 'Montserrat, sans-serif',
+        marginTop: '10px',
+        fontSize: '14px',
     });
   return (
     <>
         <div {...wrap}>
             <div {...content}>
                 <div>
-                    {img?
-                    <img {...imgCss} src="https://picsum.photos/100"/>:
+                    {props.img?
+                    <img {...imgCss} src={props.img} alt={props.name}/>:
                     (<div {...circle}>
 
                     </div>)
                     }
                 </div>
-                <p>asdasd</p>
+                <p {...title}>{props.name}</p>
             </div>
         </div>
     </>

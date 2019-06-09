@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'glamor';
-import {Redirect} from 'react-router-dom';
 
 import SideMenu from '../../Components/SideMenu';
 import Scanner from '../../Components/Scanner';
@@ -21,7 +20,7 @@ export default function index(props) {
 
     return (
         <>
-            <div style={{ backgroundColor: Colors.bgBlue }}>
+            <div style={{ backgroundColor: Colors.yellow }}>
                 <SideMenu />
             </div>
             <div>
@@ -29,11 +28,15 @@ export default function index(props) {
             </div>
             <section {...scanWrapper}>
               <Scanner
-                onScan={(data)=>{return (<Redirect to={{
-                    pathname: '/success',
-                    state: {data:data},
-                }}/>)}}
+                onScan={(data)=>{
+                    console.log(data);
+                    if(data){
+                        return (
+                            props.history.push("/success")
+                        )
+                    }}}
                 onError={(err)=>{return (<ErrorNotify text={'Não estamos conseguindo efetuar o pagamento... Desculpe pelo transtorno'}/>)}}
+                delay={1000}
               />
             </section>
         </>

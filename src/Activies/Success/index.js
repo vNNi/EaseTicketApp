@@ -4,7 +4,6 @@ import {css} from 'glamor';
 import SideMenu from '../../Components/SideMenu';
 import Colors from '../../Colors';
 import success from '../../Assets/Images/success.svg';
-import ErrorNotify from '../../Components/Composites/ErrorNotify';
 
 export default function index() {
     const title = css({
@@ -22,7 +21,7 @@ export default function index() {
     });
     return (
         <>
-            <div style={{backgroundColor:Colors.bgBlue}}>
+            <div style={{backgroundColor:Colors.yellow}}>
                 <SideMenu/>
             </div>
             <section>
