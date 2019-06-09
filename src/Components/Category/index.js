@@ -41,7 +41,7 @@ export default function Category(props) {
           return function remove(){
               window.removeEventListener('resize',resize);
           }
-      })
+      });
 
     return (
         <section {...wrapper}>
